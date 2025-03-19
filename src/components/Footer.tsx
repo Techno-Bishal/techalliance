@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-purple-500 text-white py-10">
       <div className="container max-w-screen-2xl mx-auto px-4 lg:px-28 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        {/* Quick Links */}
+       
         <div>
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2">
@@ -16,7 +16,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Information */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Contact</h2>
           <p className="flex items-center justify-center md:justify-start gap-2">
@@ -41,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* WhatsApp Community */}
+     
         <div>
           <h2 className="text-xl font-semibold mb-4">WhatsApp Community</h2>
           <p className="mb-4">

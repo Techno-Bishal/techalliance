@@ -10,7 +10,7 @@ const PageAbout = () => {
 
       <div className="container max-w-screen-2xl mx-auto px-4 lg:px-28 grid md:grid-cols-2 gap-10 items-center">
         
-        {/* Image with slide-in-left animation */}
+       
         <div 
           className="relative w-full h-64 md:h-96"
           data-aos="fade-left"
@@ -23,7 +23,7 @@ const PageAbout = () => {
           />
         </div>
 
-        {/* Text with slide-in-right animation */}
+      
         <div data-aos="fade-right">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
             Empowering Minds, Unlocking Potential

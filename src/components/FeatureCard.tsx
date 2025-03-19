@@ -31,15 +31,15 @@ const features = [
 const FeatureCards = () => {
   const loopedFeatures = [...features, ...features];
 
-  // Track scroll speed based on screen width
-  const [scrollDuration, setScrollDuration] = useState(15); // default
+  
+  const [scrollDuration, setScrollDuration] = useState(15); 
 
   useEffect(() => {
     const updateSpeed = () => {
       if (window.innerWidth < 640) {
-        setScrollDuration(6); // ⏩ Faster on mobile
+        setScrollDuration(6); 
       } else {
-        setScrollDuration(15); // Normal speed on desktop
+        setScrollDuration(15); 
       }
     };
   

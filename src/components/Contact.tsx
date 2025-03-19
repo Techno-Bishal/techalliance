@@ -1,22 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const handleChange = (e) => {
+  
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted", formData);
   };
@@ -27,11 +40,12 @@ const Contact = () => {
         Feel Free To Contact
       </h2>
       <div className="container max-w-screen-2xl mx-auto px-4 lg:px-20 w-full flex flex-col md:flex-row gap-8">
-        
-        {/* Left Side - Contact Details */}
+       
         <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
           <h2 className="text-3xl font-semibold text-purple-800">Contact Us</h2>
-          <p className="text-gray-600">We’d love to hear from you. Reach out to us using the details below or fill out the form.</p>
+          <p className="text-gray-600">
+            We’d love to hear from you. Reach out to us using the details below or fill out the form.
+          </p>
           <div className="space-y-4 text-gray-700">
             <p className="flex items-center justify-center md:justify-start gap-2">
               <Mail className="text-purple-600" /> techalliancedang3@techalliance.com
@@ -45,7 +59,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side - Contact Form with fade-left animation */}
+      
         <div className="w-full md:w-1/2" data-aos="fade-left">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -78,13 +92,16 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
+                rows={5} 
                 className="w-full p-3 rounded-lg bg-purple-200 border-none outline-none text-purple-900 placeholder-gray-500"
                 placeholder="Write your message..."
                 required
               ></textarea>
             </div>
-            <button type="submit" className="w-full cursor-pointer bg-purple-600 hover:bg-purple-500 transition duration-300 p-3 rounded-lg text-lg font-semibold text-white flex items-center justify-center gap-2">
+            <button
+              type="submit"
+              className="w-full cursor-pointer bg-purple-600 hover:bg-purple-500 transition duration-300 p-3 rounded-lg text-lg font-semibold text-white flex items-center justify-center gap-2"
+            >
               Send Message <Send size={20} />
             </button>
           </form>

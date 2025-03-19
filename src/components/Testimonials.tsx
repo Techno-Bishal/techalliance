@@ -33,7 +33,7 @@ const testimonials = [
   },
 ];
 
-// Double the array for seamless infinite scroll
+
 const scrollingTestimonials = [...testimonials, ...testimonials];
 
 const Testimonials = () => {
