@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import pageAbout from '../assets/pageabout.jpeg'
+import pageAbout from '../assets/pageabout.jpeg';
 
 const PageAbout = () => {
   return (
@@ -10,28 +10,33 @@ const PageAbout = () => {
 
       <div className="container max-w-screen-2xl mx-auto px-4 lg:px-28 grid md:grid-cols-2 gap-10 items-center">
         
-        <div className="relative w-full h-64 md:h-96">
+        {/* Image with slide-in-left animation */}
+        <div 
+          className="relative w-full h-64 md:h-96"
+          data-aos="fade-left"
+        >
           <Image
-            src={pageAbout} // ✅ Corrected: Use public folder image
+            src={pageAbout} 
             alt="about-img"
             fill
             className="object-cover rounded-lg shadow-lg"
           />
         </div>
 
-        <div>
+        {/* Text with slide-in-right animation */}
+        <div data-aos="fade-right">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
             Empowering Minds, Unlocking Potential
           </h2>
           <p className="mb-4 text-base leading-relaxed text-purple-800">
-            Tech Alliance is a tech-driven community with the motto "Together We Grow." 
+            Tech Alliance is a tech-driven community with the motto Together We Grow. 
             The group provides various technology services, including web development, 
             app development, and SEO. The primary goal of Tech Alliance is to foster 
             a collaborative environment where members can learn, grow, and advance 
             professionally in the tech industry.
           </p>
 
-          <div className="mb-6 text-base leading-relaxed text-purple-800"> {/* ✅ Fixed incorrect class syntax */}
+          <div className="mb-6 text-base leading-relaxed text-purple-800">
             <h2 className="text-xl font-semibold">Vision & Missions</h2>
             <p className="mb-2"><strong>Vision:</strong> To create a strong tech community where innovation, learning, and collaboration drive growth.</p>
             <p className="mb-2"><strong>Mission:</strong> To provide high-quality tech solutions while empowering members to enhance their skills and contribute to the industry.</p>
@@ -56,6 +61,6 @@ const PageAbout = () => {
       </div>
     </section>
   );
-}
+};
 
 export default PageAbout;
