@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Github, Linkedin } from "lucide-react";
 import AOS from "aos";
@@ -27,18 +27,8 @@ const teamMembers = [
 ];
 
 const OurTeam = () => {
-  const [scrollDuration, setScrollDuration] = useState(20);
-
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-
-    const updateSpeed = () => {
-      setScrollDuration(window.innerWidth < 640 ? 10 : 20);
-    };
-
-    updateSpeed();
-    window.addEventListener("resize", updateSpeed);
-    return () => window.removeEventListener("resize", updateSpeed);
   }, []);
 
   return (
@@ -56,7 +46,7 @@ const OurTeam = () => {
             <div
               key={index}
               data-aos="fade-right"
-              className="w-72 bg-white shadow-lg hover:scale-105 transition-all rounded-lg p-6 flex flex-col items-center"
+              className="w-72 bg-white shadow-lg hover:scale-105 transition-all duration-300 rounded-lg p-6 flex flex-col items-center"
             >
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-400 mb-4">
                 <Image

@@ -1,5 +1,4 @@
 
-import AboutSection from '@/components/AboutSection'
 import Footer from '@/components/Footer'
 import PageAbout from '@/components/PageAbout'
 import PageNavbar from '@/components/PageNavbar'

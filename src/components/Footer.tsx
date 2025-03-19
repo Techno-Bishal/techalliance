@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Facebook, Youtube, Linkedin, Music } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Youtube, Linkedin,} from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -50,12 +51,12 @@ const Footer = () => {
   <p>© Tech Alliance Dang, Nepal, All Rights Reserved.</p>
   <p>
     Created by 
-    <a 
+    <Link
       href="https://bishal-kc-ax8q.vercel.app/" 
       className="animate-pulse font-bold pt-4 inline-block"
     >
       Bishal Kc ❤️
-    </a>
+    </Link>
   </p>
 </div>
 

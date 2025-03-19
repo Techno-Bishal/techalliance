@@ -10,11 +10,19 @@ const PageNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [heroInView, setHeroInView] = useState(true);
 
- 
+  useEffect(() => {
+    const handleScroll = () => {
+      setHeroInView(window.scrollY <= 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const textColorClass = heroInView ? "text-black" : "text-black";
   const hoverColorClass = heroInView ? "hover:text-purple-400 duration-300" : "hover:text-purple-600";
 
-  const menuItems = ["Home", "About", "Services", "Teams", "Testimonials" ,"Contact"];
+  const menuItems = ["Home", "About", "Services", "Teams", "Testimonials", "Contact"];
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-md transition-colors duration-300">
@@ -31,10 +39,7 @@ const PageNavbar = () => {
         <ul className={`hidden lg:flex space-x-6 font-medium ${textColorClass}`}>
           {menuItems.map((item) => (
             <li key={item}>
-              <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`${hoverColorClass} text-lg `}
-              >
+              <Link href={item === "Home" ? "/" : `/${item.toLowerCase()}`} className={`${hoverColorClass} text-lg `}>
                 {item}
               </Link>
             </li>
@@ -68,11 +73,7 @@ const PageNavbar = () => {
         <ul className="flex flex-col space-y-6 p-6 text-lg">
           {menuItems.map((item) => (
             <li key={item}>
-              <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                onClick={() => setIsOpen(false)}
-                className="hover:text-purple-400"
-              >
+              <Link href={item === "Home" ? "/" : `/${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-purple-400">
                 {item}
               </Link>
             </li>

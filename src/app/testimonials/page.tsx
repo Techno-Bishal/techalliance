@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+
 import PageNavbar from '@/components/PageNavbar'
 import Testimonials from '@/components/Testimonials'
 import React from 'react'

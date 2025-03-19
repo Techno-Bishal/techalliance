@@ -28,7 +28,7 @@ const ServicesSection = () => {
             <div
               key={index}
               data-aos="flip-left"
-              className="bg-purple-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform"
+              className="bg-purple-700 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out"
             >
               <div className="flex justify-center mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
